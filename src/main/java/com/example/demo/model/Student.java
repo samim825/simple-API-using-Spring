@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by User on 5/1/2020.
@@ -12,12 +13,15 @@ public class Student {
 
     @Id
     @GeneratedValue
+    @NotNull
     @Column(name="student_id")
     private Integer id;
 
+    @NotNull
     @Column(name="student_name")
     private String name;
 
+    @NotNull
     @Column(name="student_dept")
     private String dept;
 
