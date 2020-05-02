@@ -19,15 +19,6 @@ public class StudentController {
     StudentDao studentDao;
 
 
-//    @PostMapping("/student")
-//    public Student addStudent(){
-//        System.out.println("Add student method visited");
-//        Student student = new Student();
-//        student.setDept("ICT");
-//        student.setName("Basar");
-//        studentDao.save(student);
-//        return student;
-//    }
 
     @GetMapping(path = "/student",consumes = "application/json")
     public List<Student> studentList(){
@@ -36,10 +27,15 @@ public class StudentController {
     }
 
 
-    @RequestMapping("/")
-    public String goHome(){
+
+
+    @PostMapping("/student")
+    public Student addStudent(Student student){
+
+        studentDao.save(student);
+
         System.out.println("home method visited");
-        return "home";
+        return student;
     }
 
 }
